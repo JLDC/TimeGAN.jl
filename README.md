@@ -5,13 +5,13 @@ This repository contains a Julia implementation of the paper "Time-series Genera
 
 The original Python code can be found on the [author's GitHub](https://github.com/jsyoon0823/TimeGAN).
 
-**Disclaimer**: The current code is still unfinished and not fully tested.
+**Disclaimer**: While the current code is function, it is still unfinished and not fully tested.
 
 ## TODO List
 - [ ] Add GPU compatibility
 - [ ] Make `z_dim` match `data` dimension (or not?)
-- [ ] Add data loading utilities
-- [ ] Add data scaling
+- [x] Add data loading utilities
+- [x] Add data scaling
 - [ ] Complete / polish docstrings
 - [ ] Add example usage / notebook
 - [ ] Add moments losses for generator

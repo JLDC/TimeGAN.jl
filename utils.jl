@@ -1,4 +1,7 @@
 using Flux
+using Random
+using StatsBase
+using UnPack
 
 """
     Seq2One(rnn, fc)
@@ -61,3 +64,21 @@ tabular2rnn(X::AbstractArray{Float32, 3}) = [X[t, :, :] for t ∈ 1:size(X, 1)]
 Converts RNN sequence format `X` into tabular data.
 """
 rnn2tabular(X::Vector{Matrix{Float32}}) = permutedims(cat(X..., dims=3), [3, 1, 2])
+
+
+"""
+    sample_batch(data, tg)
+
+Samples a batch of data from `data` using the parameters from the TimeGAN `tg`.
+"""
+function sample_batch(data, tg; rnn_format=true)
+    @unpack batchsize, seqlen = tg
+    # Make sure the data length is a multiple of seqlen to avoid unlucky splitting
+    res = size(data, 1) % seqlen
+    if res != 0
+        data = data[1+res:end, :]
+    end
+    indexes = sample(collect(Iterators.partition(1:size(data, 1), seqlen)), batchsize)
+    X = cat([data[idx, :] for idx ∈ indexes]..., dims=3)
+    rnn_format ? tabular2rnn(X) : X
+end
