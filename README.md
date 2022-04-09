@@ -5,7 +5,7 @@ This repository contains a Julia implementation of the paper "Time-series Genera
 
 The original Python code can be found on the [author's GitHub](https://github.com/jsyoon0823/TimeGAN).
 
-**Disclaimer**: While the current code is function, it is still unfinished and not fully tested.
+**Disclaimer**: While the current code is functional, it is still unfinished and not fully tested.
 
 ## TODO List
 - [ ] Add GPU compatibility
@@ -15,3 +15,4 @@ The original Python code can be found on the [author's GitHub](https://github.co
 - [ ] Complete / polish docstrings
 - [ ] Add example usage / notebook
 - [ ] Add moments losses for generator
+- [ ] Loss sizing

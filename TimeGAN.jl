@@ -62,7 +62,7 @@ function train(
             end
         end
     end
-    verbose && println("-"^80)
+    verbose && println("-"^80, "\n")
 
     # 2. Training only with supervised loss ------------------------------------------------
     verbose && println("----- Start Supervised network only training ", "-"^35)
@@ -85,7 +85,7 @@ function train(
             end
         end
     end
-    verbose && println("-"^80)
+    verbose && println("-"^80, "\n")
 
     # 3. Joint training --------------------------------------------------------------------
     verbose && println("----- Start Joint training ", "-"^53)

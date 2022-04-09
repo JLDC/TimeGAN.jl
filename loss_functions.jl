@@ -21,7 +21,7 @@ function generator_loss(d, g, s, H, Z)
     s_loss = supervised_loss(s, H)
     # TODO: first 2 moments losses
     g_loss_u = discriminator_loss(d, Ỹ, y)
-    g_loss_u + 1f3sqrt(s_loss)
+    g_loss_u + s_loss
 end
 
 """
