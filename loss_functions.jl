@@ -36,7 +36,7 @@ function reconstruction_loss(e, r, X)
 end
 
 """
-    join_reconstruction_loss(e, r, X)
+    joint_reconstruction_loss(e, r, X)
 
 """ # TODO: complete dosctring
 function joint_reconstruction_loss(e, r, s, X, η)
